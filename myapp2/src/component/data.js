@@ -1,0 +1,2 @@
+const list=[{id:1,name:"umair",email:"umairnoonari98@gmail",price:200},{id:2,name:"Tahir",email:"Tahirnoonari98@gmail.com",price:200},{id:3,name:"Nazeer",email:"Nazeer2000@gmail.com",price:300}];
+export default list;
