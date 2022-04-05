@@ -13,7 +13,7 @@ const withCounter=class NewComponent extends React.Component{
     render()
     {
         return <>
-        <WrappedComponent increment={this.increment} count={this.state} />
+        <WrappedComponent increment={this.increment.bind(this)} count={this.state} />
         </>
     }
 }

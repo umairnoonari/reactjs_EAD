@@ -28,6 +28,7 @@ class Ccomponent extends React.Component
     render()
     {
         return<>
+        
             <form>
                 <input type="text" value={this.state.fullname} name="fullname" onChange={this.handleChange.bind(this)} />
                 <br />

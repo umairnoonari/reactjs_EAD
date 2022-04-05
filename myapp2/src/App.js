@@ -21,7 +21,9 @@ import UseEffectHook from './component/UseEffectHook';
 function App() {
   return (
     <>
+    
     <Router>
+      <Click />
        <Navbar />
        <Routes>
         {/* <Route index element={<About />}></Route> */}

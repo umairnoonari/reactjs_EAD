@@ -7,22 +7,50 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Categories from "./Pages/Categories";
+import Kid from "./Pages/Kid";
+import Kid2 from "./Pages/Kid2";
 // import {Link,Routes,Route,BrowserRouter as Router} from 'react-router-dom'
 // import { render } from "react-dom";
 import {BrowserRouter as Router,Routes,Route,Link} from 'react-router-dom';
+import Listview from "./Listview";
+import ListItem from "./Pages/ListItem";
+import Counter from "./Counter";
+import Clickme from "./Clickme";
+import Hoverme from "./Hoverme";
+import Contextapi from "./Contextapi";
 function Myapp()
 {
+
+    function CounterCall(count,handelChange)
+    {
+        return <>
+        <Clickme count={count} handelChange={handelChange} />
+        </>
+    }
     return(<>
+    <Contextapi />
+    {/* <Counter>{(count,handelChange)=>(<Hoverme count={count} handelChange={handelChange} />)}</Counter> */}
+    <Counter render={(count,handelChange)=>(<Hoverme count={count} handelChange={handelChange} />)} />
+    <Counter  render={CounterCall}/>
     <Router>
       <Navbar />
       <Routes>
+          <Route index element={<Home /> }/>
           <Route path="/" element={<Home />}/>
           <Route path="/about" element={<About />}/>
           <Route path='/contact' element={<Contact />}/>
-          <Route path='/category' element={<Categories />}>
-              <Route path='/kid' ></Route>
+          <Route path="/list" element={<Listview />}>
+             
+             
           </Route>
+          
+          <Route path="/list/:item" element={<ListItem />}></Route>
 
+          <Route path='/category' element={<Categories />}>
+              <Route path='Kid' element={<Kid />}></Route>
+              <Route path='Kid2' element={<Kid2 />}></Route>
+          </Route>
+          
       </Routes>
     </Router>
     </>)
